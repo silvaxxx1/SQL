@@ -1,0 +1,20 @@
+-- MY SCORE WAS JUST 0 LETS UPDATE THIS 
+UPDATE customers
+SET score = CASE id
+    WHEN 5THEN 100
+    WHEN 6 THEN 250
+    WHEN 7 THEN 300
+    WHEN 8 THEN 75
+    WHEN 9 THEN 0
+    ELSE score  -- keep existing if ID not listed
+END;
+
+-- LTS CHECK 
+SELECT * FROM customers 
+
+
+
+-- NOT LETS FILTER SCORE BETWEEN 150 NAD 300
+SELECT * FROM customers 
+WHERE score NOT BETWEEN 150 AND 300
+

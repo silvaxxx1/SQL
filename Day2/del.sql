@@ -12,4 +12,7 @@ SELECT * FROM customers
 -- DELETE FROM person 
 -- FOR LARGEER TABLES USE TRUNCATE 
 
-TRUNCATE TABLE person
+TRUNCATE TABLE person 
+
+-- SELECT * FROM person
+
