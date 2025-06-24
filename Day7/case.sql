@@ -45,3 +45,31 @@ SELECT
 -- find the average scores of the customers and treat null values as 0 
 -- additionaly provide details such CustomerID, LastName
 
+SELECT 
+    CustomerID,
+    LastName,
+    AVG(COALESCE(Score, 0)) OVER () AS AvgScore
+    FROM Sales.Customers 
+
+-- DO THE SAME TASK WITH CASE STATEMENT 
+SELECT 
+    CustomerID,
+    LastName,
+    AVG(CASE 
+        WHEN Score IS NULL THEN 0
+        ELSE Score 
+        END) 
+        OVER () AS AvgScore
+    FROM Sales.Customers 
+
+-- COUNT HOW MANY TIMES EACH CUSTOMERS HAS MADE AN ORDER WITH SALES GRETER THAN 30 
+
+SELECT 
+ CustomerID, 
+ SUM(CASE 
+  WHEN Sales > 30 THEN 1
+  ELSE 0
+  END) AS  TOATL_FLAG ,
+  COUNT(*) TOTALORDERS
+ FROM Sales.Orders
+  GROUP BY CustomerID
