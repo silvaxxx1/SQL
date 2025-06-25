@@ -72,4 +72,4 @@ SELECT
   END) AS  TOATL_FLAG ,
   COUNT(*) TOTALORDERS
  FROM Sales.Orders
-  GROUP BY CustomerID
+  GROUP BY CustomerID 
