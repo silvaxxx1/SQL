@@ -51,4 +51,15 @@ SELECT
     Sales,
     SUM(Sales) OVER () TotalSales,
     ROUND(CAST(Sales AS FLoat)/ SUM(Sales) OVER () * 100, 2)  PercentageContribution 
-FROM Sales.Orders
+FROM Sales.Orders 
+
+
+-- show the employee who have the highest salary 
+
+SELECT 
+    EmployeeID,
+    FirstName,
+    LastName,
+    Salary,
+    MAX(Salary) OVER () MaxSalary 
+FROM Sales.Employees
